@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BIP</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta http-equiv="Content-Type" />
+  </head>
+  <body>
+    <div class="app">
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a
+              class="tab__link"
+              onclick="openCity(event, 'page__settings')"
+              id="defaultOpen"
+            >
+              <span>Settings</span>
+            </a>
+          </li>
+          <li>
+            <a class="tab__link" onclick="openCity(event, 'page__generator')">
+              <span>Generator</span>
+            </a>
+          </li>
+          <li>
+            <a class="tab__link" onclick="openCity(event, 'page__log')">
+              <span>Log</span>
+            </a>
+          </li>
+          <li>
+            <a class="tab__link" onclick="openCity(event, 'page__help')">
+              <span>Help</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div id="page__settings" class="tab__content">
+        <form id="page__settings-form">
+          <div class="content__container">
+            <div class="content__wrapper">
+              <div class="cell__wrapper">
+                <h2>Generator 1</h2>
+                <div>
+                  <span>period: </span>
+                  <input name="periodGen1" />
+                  <span> uS</span>
+                </div>
+              </div>
+              <div class="cell__wrapper">
+                <h2>Generator 2</h2>
+                <div>
+                  <span>period: </span>
+                  <input name="periodGen2" />
+                  <span> uS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content__wrapper">
+              <div class="cell__wrapper">
+                <h2>External sunc 1</h2>
+                <div>
+                  <span>Dtime: </span>
+                  <input name="externalSunc1" />
+                  <span> uS</span>
+                </div>
+              </div>
+              <div class="cell__wrapper">
+                <h2>External sunc 2</h2>
+                <div>
+                  <span>Dtime: </span>
+                  <input name="externalSunc2" />
+                  <span> uS</span>
+                </div>
+              </div>
+              <div class="cell__wrapper">
+                <h2>External sunc 3</h2>
+                <div>
+                  <span>Dtime: </span>
+                  <input name="externalSunc3" />
+                  <span> uS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="channels__container">
+            <div class="channels__line">
+              <h4>Channel 1</h4>
+              <select name="channel1" onchange="changeSelectedChannel(this)">
+                <option value="pulse">Pulse</option>
+                <option value="disabled">Disabled</option>
+                <option value="level">Level</option>
+              </select>
+              <div class="channel__line-settings" id="channelSyncFirst1--empty">
+                <div>
+                  <span>sync: </span>
+                  <select name="channelSyncFirst1">
+                    <option>Gen 1</option>
+                    <option>Gen 2</option>
+                    <option>ext 1</option>
+                    <option>ext 2</option>
+                    <option>ext 3</option>
+                  </select>
+                  <select name="channelSyncSecond1" id="channelSyncSecond1">
+                    <option>Rise</option>
+                    <option>Fall</option>
+                  </select>
+                </div>
+                <div>
+                  <span>out: </span>
+                  <select name="channelOut1">
+                    <option>high</option>
+                    <option>low</option>
+                  </select>
+                </div>
+              </div>
+              <span>Some images</span>
+            </div>
+
+            <div class="channels__line">
+              <h4>Channel 2</h4>
+              <select name="channel2" onchange="changeSelectedChannel(this)">
+                <option>Pulse</option>
+                <option>Disabled</option>
+                <option>Level</option>
+              </select>
+              <div class="channel__line-settings">
+                <div>
+                  <span>sync: </span>
+                  <select
+                    name="channelSyncFirst2"
+                    id="channelSyncFirst2--empty"
+                  >
+                    <option>Gen 1</option>
+                    <option>Gen 2</option>
+                    <option>ext 1</option>
+                    <option>ext 2</option>
+                    <option>ext 3</option>
+                  </select>
+                  <select name="channelSyncSecond2"  id="channelSyncSecond2">
+                    <option>Rise</option>
+                    <option>Fall</option>
+                  </select>
+                </div>
+                <div>
+                  <span>out: </span>
+                  <select name="channelOut2">
+                    <option>high</option>
+                    <option>low</option>
+                  </select>
+                </div>
+              </div>
+              <span>Some images</span>
+            </div>
+
+            <div class="channels__line">
+              <h4>Channel 3</h4>
+              <select name="channel3" onchange="changeSelectedChannel()">
+                <option>Pulse</option>
+                <option>Disabled</option>
+                <option>Level</option>
+              </select>
+              <div class="channel__line-settings">
+                <div>
+                  <span>sync: </span>
+                  <select
+                    name="channelSyncFirst3"
+                    id="channelSyncFirst3--empty"
+                  >
+                    <option>Gen 1</option>
+                    <option>Gen 2</option>
+                    <option>ext 1</option>
+                    <option>ext 2</option>
+                    <option>ext 3</option>
+                  </select>
+                  <select name="channelSyncSecond3"  id="channelSyncSecond3">
+                    <option>Rise</option>
+                    <option>Fall</option>
+                  </select>
+                </div>
+                <div>
+                  <span>out: </span>
+                  <select name="channelOut3">
+                    <option>high</option>
+                    <option>low</option>
+                  </select>
+                </div>
+              </div>
+              <span>Some images</span>
+            </div>
+
+            <div class="channels__line">
+              <h4>Channel 4</h4>
+              <select name="channel4" onchange="changeSelectedChannel()">
+                <option>Pulse</option>
+                <option>Disabled</option>
+                <option>Level</option>
+              </select>
+              <div class="channel__line-settings">
+                <div>
+                  <span>sync: </span>
+                  <select
+                    name="channelSyncFirst4"
+                    id="channelSyncFirst4--empty"
+                  >
+                    <option>Gen 1</option>
+                    <option>Gen 2</option>
+                    <option>ext 1</option>
+                    <option>ext 2</option>
+                    <option>ext 3</option>
+                  </select>
+                  <select name="channelSyncSecond4"  id="channelSyncSecond4">
+                    <option>Rise</option>
+                    <option>Fall</option>
+                  </select>
+                </div>
+                <div>
+                  <span>out: </span>
+                  <select name="channelOut4">
+                    <option>high</option>
+                    <option>low</option>
+                  </select>
+                </div>
+              </div>
+              <span>Some images</span>
+            </div>
+          </div>
+          <button type="button" onclick="submitForm()">save</button>
+          <div id="result"></div>
+        </form>
+      </div>
+
+      <div id="page__generator" class="tab__content">
+        <h2>Generator</h2>
+      </div>
+
+      <div id="page__log" class="tab__content">
+        <h2>Log</h2>
+      </div>
+      <div id="page__help" class="tab__content">
+        <h2>Help</h2>
+      </div>
+    </div>
+
+    <script>
+      function openCity(evt, Name) {
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName('tab__content');
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = 'none';
+        }
+
+        tablinks = document.getElementsByClassName('tab__link');
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(' active', '');
+        }
+
+        document.getElementById(Name).style.display = 'block';
+        evt.currentTarget.className += ' active';
+      }
+
+      document.getElementById('defaultOpen').click();
+
+      function submitForm() {
+        const form = document.getElementById('page__settings-form');
+
+        let resultObj = {};
+
+        const values = new FormData(form);
+
+        for (const pair of values.entries()) {
+          resultObj[pair[0]] = pair[1];
+        }
+
+        console.log(resultObj, 'resultObj');
+        // Эта функция собирает объект, если нужно изменить имя поля объекта, то поменяй name у инпута или селектора - автоматически изменится и ключ в объекте
+        // Эту функцию можно вызвать в openCity, сделав там проверку на name !== settings, например
+        // здесь же передать в сокет values
+
+        const divResult = document.getElementById('result');
+        divResult.innerHTML = JSON.stringify(resultObj);
+      }
+
+      function changeSelectedChannel(selectedObj) {
+        const value = selectedObj.value;
+        const name = selectedObj.name;
+
+        console.log(value, name, '=-=-=');
+
+        if (value === 'disabled') {
+          console.log(1);
+          if (name === 'channel1') {
+            document.getElementById('channelSyncFirst1--empty').style.display = 'none';
+          }
+          if (name === 'channel2') {
+            document.getElementById('channelSyncFirst2--empty').style.display = 'none';
+          }
+          if (name === 'channel3') {
+            document.getElementById('channelSyncFirst3--empty').style.display = 'none';
+          }
+          if (name === 'channel4') {
+            document.getElementById('channelSyncFirst4--empty').style.display = 'none';
+          }
+        }
+
+        if (value === 'level') {
+          console.log(2);
+          if (name === 'channel1') {
+            document.getElementById('channelSyncFirst1--empty').style.display = 'block';
+            document.getElementById('channelSyncSecond1').style.display = 'none';
+          }
+          if (name === 'channel2') {
+            document.getElementById('channelSyncFirst2--empty').style.display = 'block';
+            document.getElementById('channelSyncSecond2').style.display = 'none';
+          }
+          if (name === 'channel3') {
+            document.getElementById('channelSyncFirst3--empty').style.display = 'block';
+            document.getElementById('channelSyncSecond3').style.display = 'none';
+          }
+          if (name === 'channel4') {
+            document.getElementById('channelSyncFirst4--empty').style.display = 'block';
+            document.getElementById('channelSyncSecond4').style.display = 'none';
+          }
+        }
+
+        if (value === 'pulse') {
+          console.log(3);
+          if (name === 'channel1') {
+            document.getElementById('channelSyncSecond1').style.display = 'inline-block';
+            document.getElementById('channelSyncFirst1--empty').style.display = 'block';
+          }
+          if (name === 'channel2') {
+            document.getElementById('channelSyncSecond2').style.display = 'inline-block';
+            document.getElementById('channelSyncFirst2--empty').style.display = 'block';
+          }
+          if (name === 'channel3') {
+            document.getElementById('channelSyncSecond3').style.display = 'inline-block';
+            document.getElementById('channelSyncFirst3--empty').style.display = 'block';
+          }
+          if (name === 'channel4') {
+            document.getElementById('channelSyncSecond4').style.display = 'inline-block';
+            document.getElementById('channelSyncFirst4--empty').style.display = 'block';
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
