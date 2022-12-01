@@ -91,9 +91,9 @@
             <div class="channels__line">
               <h4>Channel 1</h4>
               <select name="channel1" onchange="changeSelectedChannel(this)">
-                <option value="pulse">Pulse</option>
-                <option value="disabled">Disabled</option>
-                <option value="level">Level</option>
+                <option value="pulse">pulse</option>
+                <option value="disabled">disabled</option>
+                <option value="level">level</option>
               </select>
               <div class="channel__line-settings" id="channelSyncFirst1--empty">
                 <div>
@@ -124,17 +124,14 @@
             <div class="channels__line">
               <h4>Channel 2</h4>
               <select name="channel2" onchange="changeSelectedChannel(this)">
-                <option>Pulse</option>
-                <option>Disabled</option>
-                <option>Level</option>
+                <option value="pulse">pulse</option>
+                <option value="disabled">disabled</option>
+                <option value="level">level</option>
               </select>
-              <div class="channel__line-settings">
+              <div class="channel__line-settings" id="channelSyncFirst2--empty">
                 <div>
                   <span>sync: </span>
-                  <select
-                    name="channelSyncFirst2"
-                    id="channelSyncFirst2--empty"
-                  >
+                  <select name="channelSyncFirst2">
                     <option>Gen 1</option>
                     <option>Gen 2</option>
                     <option>ext 1</option>
@@ -159,18 +156,15 @@
 
             <div class="channels__line">
               <h4>Channel 3</h4>
-              <select name="channel3" onchange="changeSelectedChannel()">
-                <option>Pulse</option>
-                <option>Disabled</option>
-                <option>Level</option>
+              <select name="channel3" onchange="changeSelectedChannel(this)">
+                <option value="pulse">pulse</option>
+                <option value="disabled">disabled</option>
+                <option value="level">level</option>
               </select>
-              <div class="channel__line-settings">
+              <div class="channel__line-settings" id="channelSyncFirst3--empty">
                 <div>
                   <span>sync: </span>
-                  <select
-                    name="channelSyncFirst3"
-                    id="channelSyncFirst3--empty"
-                  >
+                  <select name="channelSyncFirst3">
                     <option>Gen 1</option>
                     <option>Gen 2</option>
                     <option>ext 1</option>
@@ -195,18 +189,15 @@
 
             <div class="channels__line">
               <h4>Channel 4</h4>
-              <select name="channel4" onchange="changeSelectedChannel()">
-                <option>Pulse</option>
-                <option>Disabled</option>
-                <option>Level</option>
+              <select name="channel4" onchange="changeSelectedChannel(this)">
+                <option value="pulse">pulse</option>
+                <option value="disabled">disabled</option>
+                <option value="level">level</option>
               </select>
-              <div class="channel__line-settings">
+              <div class="channel__line-settings" id="channelSyncFirst4--empty">
                 <div>
                   <span>sync: </span>
-                  <select
-                    name="channelSyncFirst4"
-                    id="channelSyncFirst4--empty"
-                  >
+                  <select name="channelSyncFirst4">
                     <option>Gen 1</option>
                     <option>Gen 2</option>
                     <option>ext 1</option>
@@ -311,19 +302,19 @@
         if (value === 'level') {
           console.log(2);
           if (name === 'channel1') {
-            document.getElementById('channelSyncFirst1--empty').style.display = 'block';
+            document.getElementById('channelSyncFirst1--empty').style.display = 'inline-block';
             document.getElementById('channelSyncSecond1').style.display = 'none';
           }
           if (name === 'channel2') {
-            document.getElementById('channelSyncFirst2--empty').style.display = 'block';
+            document.getElementById('channelSyncFirst2--empty').style.display = 'inline-block';
             document.getElementById('channelSyncSecond2').style.display = 'none';
           }
           if (name === 'channel3') {
-            document.getElementById('channelSyncFirst3--empty').style.display = 'block';
+            document.getElementById('channelSyncFirst3--empty').style.display = 'inline-block';
             document.getElementById('channelSyncSecond3').style.display = 'none';
           }
           if (name === 'channel4') {
-            document.getElementById('channelSyncFirst4--empty').style.display = 'block';
+            document.getElementById('channelSyncFirst4--empty').style.display = 'inline-block';
             document.getElementById('channelSyncSecond4').style.display = 'none';
           }
         }
@@ -332,19 +323,19 @@
           console.log(3);
           if (name === 'channel1') {
             document.getElementById('channelSyncSecond1').style.display = 'inline-block';
-            document.getElementById('channelSyncFirst1--empty').style.display = 'block';
+            document.getElementById('channelSyncFirst1--empty').style.display = 'inline-block';
           }
           if (name === 'channel2') {
             document.getElementById('channelSyncSecond2').style.display = 'inline-block';
-            document.getElementById('channelSyncFirst2--empty').style.display = 'block';
+            document.getElementById('channelSyncFirst2--empty').style.display = 'inline-block';
           }
           if (name === 'channel3') {
             document.getElementById('channelSyncSecond3').style.display = 'inline-block';
-            document.getElementById('channelSyncFirst3--empty').style.display = 'block';
+            document.getElementById('channelSyncFirst3--empty').style.display = 'inline-block';
           }
           if (name === 'channel4') {
             document.getElementById('channelSyncSecond4').style.display = 'inline-block';
-            document.getElementById('channelSyncFirst4--empty').style.display = 'block';
+            document.getElementById('channelSyncFirst4--empty').style.display = 'inline-block';
           }
         }
       }
